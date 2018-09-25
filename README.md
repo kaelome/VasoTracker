@@ -4,7 +4,7 @@ VasoTracker
 
 An open source pressure myograph system and diameter tracking software for assessing vascular reactivity.
 
-Pressure myographs are used to assess blood vessel function. Both smooth muscle cell contraction and relaxation can be assayed using the pressure myograph. The 
+Pressure myographs are used to assess blood vessel function. Both smooth muscle cell contraction and relaxation can be assayed using the pressure myograph.
 
 Commercial pressure myograph systems are expensive. Rather than buy one, we prefered to build our own, taking advantage of open-source technologies and cheap off-the-shelf components. 
 
