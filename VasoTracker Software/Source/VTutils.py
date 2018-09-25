@@ -268,7 +268,22 @@ def process_ddts(ddts,thresh,nx,scale):
         inner_diameters2.append(ID2_,)
         ODS.append(OD)
         IDS.append(ID)
-    OD = np.average([el for el in ODS if el != 0])
-    ID = np.average([el for el in IDS if el != 0])
+    ODlist = [el for el in ODS if el != 0]
+    IDlist = [el for el in IDS if el != 0]
+
+    OD = np.average(ODlist)
+    ID = np.average(IDlist)
+
+    STDEVOD = np.std(ODlist)
+    STDEVID = np.std(IDlist)
+
+    print OD
+    print STDEVOD
+
+    ODlist2 = [el for el in ODlist if (OD - STDEVOD) < el < (OD + STDEVOD)]
+    IDlist2 = [el for el in IDlist if (ID - STDEVID) < el < (ID + STDEVID)]
+
+    OD = np.average(ODlist2)
+    ID = np.average(IDlist2)
 
     return(outer_diameters1,outer_diameters2,inner_diameters1,inner_diameters2,OD,ID)
